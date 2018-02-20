@@ -32,7 +32,8 @@ export.zip に含まれる import.xml には記事のタイトルなどの情報
       inflating: 0005/IPSJ-TPRO1101005.pdf
       inflating: import.xml
     % ls
-    0001       0002       0003       0004       0005       0006       0007       0008       0009       0010       0011       import.xml
+    0001       0002       0003       0004       0005       0006       0007       0008       0009
+    0010       0011       import.xml
     % ruby /PATH/ipsj-rename-papers.rb .
     rename 0001/IPSJ-TPRO1101001.pdf -> TPRO1101001-「情報処理学会論文誌　プログラミング」の編集について.pdf
     rename 0002/IPSJ-TPRO1101002.pdf -> TPRO1101002-Improvement of a Library for Model Checking under Weakly Ordered Memory Model with SPIN.pdf
