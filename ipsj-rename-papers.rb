@@ -13,11 +13,10 @@
 # Usage: ruby ipsj-rename-papers.rb <import.xmlを含むディレクトリ名>
 #
 
-require 'nkf'
 require 'rexml/document'
 
 if ARGV.size != 1 then
-  warn("specify the path that contains \"import.xml\"")
+  warn("specify a path that contains \"import.xml\"")
   exit 1
 end
 
