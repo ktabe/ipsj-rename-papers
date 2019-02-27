@@ -47,7 +47,7 @@ exp.each_element do |elem|
     # puts "#{title} -- #{filename}"
     if (File.extname(filename) == ".pdf") then
       # replace invalid chars with fullwidth ones
-      title.tr!('\/:*?"<>|', "＼／：＊？”＜＞｜")
+      title.tr!('\\\\/:*?"<>|', "＼／：＊？”＜＞｜")
       base = File.basename(filename, ".pdf")
       base.gsub!(/^IPSJ-/, '')
       newname = "#{base}-#{title}.pdf"
@@ -55,10 +55,13 @@ exp.each_element do |elem|
       if (File.exists?(filename)) then
         begin
           File.rename(filename, newname)
-          begin
-            Dir.delete(File.dirname(filename))
-          rescue => error
-            warn("rmdir failed: #{error}")
+          dir = File.dirname(filename)
+          if (dir != '.') then
+            begin
+              Dir.delete(dir)
+            rescue => error
+              warn("rmdir failed: #{error}")
+            end
           end
         rescue => error
           warn("rename failed: #{error}")
